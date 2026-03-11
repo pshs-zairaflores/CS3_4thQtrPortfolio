@@ -7,8 +7,21 @@
   <body>
       <h3 class="title">Add a Movie</h3>
       <form id="dForm">
-        Title <input type="text" id="bookTitle" /><br/>
-        Year <input type="text" id="bookAuthor" /><br/>
+        <label>Title <input type="text" id="movieTitle"></label><br>
+        <label>Year <input type="number" id="movieYear"></label><br>
+        <label>Movie Genre: 
+          <select name="movieGenre" id="movieGenre">
+            <option value="action">Action</option>
+            <option value="horror">Horror</option>
+            <option value="comedy">Comedy</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="drama">Drama</option>
+            <option value="romance">Romance</option>
+            <option value="scifi">Sci-Fi</option>
+            <option value="thriller">Thriller</option>
+          </select>
+        </label><br>
+
         <button> Submit </button>
       </form>
       <br/>
