@@ -2,11 +2,11 @@
 <html>
   <head> 
     <title>Movie Rating</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="q41gStrontiumFLORES.css" />
   </head>
   <body>
-      <h3 class="title">Add a Movie</h3>
-      <form id="dForm">
+    <div class="container">
+      <h1 class="title">Add a Movie</h1>
         <label>Title <input type="text" id="movieTitle"></label><br>
         <label>Year <input type="number" id="movieYear"></label><br>
         <label>Movie Genre: 
@@ -21,15 +21,64 @@
             <option value="thriller">Thriller</option>
           </select>
         </label><br>
+        <label>Rating:</label>
+        <div class="stars" id="ratingStars">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
 
-        <button> Submit </button>
-      </form>
-      <br/>
-      
-      <span>Searh for : </span><input type="text" id="searchTitle" placeholder="Enter a Title" /> 
-      <button onclick="search()"> Display </button>
-      <div id="listBooks"> </div>
-      
-      <script src="script.js"></script>
+        <button onclick="addMovie()">Add Movie</button>
+
+      <h1>Movie List</h1>
+      <ul id="movieList"></ul>
+    </div>
+    <script>
+      let selectedRating = 0;
+
+      function addMovie() {
+        let title = document.getElementById("movieTitle").value.trim();
+        let year = document.getElementById("movieYear").value.trim();
+        let genre = document.getElementById("movieGenre").value;
+
+        let addedMovie = {
+          title: title,
+          year: year,
+          genre: genre,
+          rating: selectedRating
+        }
+
+        let movieList = JSON.parse(localStorage.getItem("movies")) || [];
+        movieList.push(addedMovie);
+        localStorage.setItem("movies", JSON.stringify(movieList));
+        displayMovies(movieList);
+      }
+
+      function displayMovies(list) {
+        let output = "";
+        for (let i = 0; i < list.length; i++) {
+          output += "<li>" + list[i].title + "</li>";
+        }
+        document.getElementById("movieList").innerHTML = output;
+      }
+
+      document.querySelectorAll(".star").forEach(star => {
+        star.addEventListener("click", function() {
+          selectedRating = this.getAttribute("data-value");
+          updateStars(selectedRating);
+        });
+      });
+
+      function updateStars(rating) {
+        document.querySelectorAll(".star").forEach(star => {
+          star.classList.remove("selected");
+          if (star.getAttribute("data-value") <= rating) {
+            star.classList.add("selected");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
