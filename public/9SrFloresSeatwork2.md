@@ -90,16 +90,17 @@
     </html>
     ```
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
-    When the position of .contect is changed to relative while keeping the top and left values, .content is placed to its original position but is moved 66px down and 200px to the right. On the other, when changed to fixed, it is placed at the same position as it was when the position was set to absolute
+    *When the position of .contect is changed to relative while keeping the top and left values, .content is placed to its original position but is moved 66px down and 200px to the right. On the other hand, when changed to fixed, it is placed at the same position as it was when the position was set to absolute. However, since the position is fixed, .content will always stay on the viewport in the same position.*
 
     * What do you observe on about the effect of z-index on .notice and .content boxes?
     *The z-index layers the elements to each other. Element with a higher z-index will be placed on top of the one with a lower z-index.*
 
 3. Please answer the following reflection questions (15 minutes)
 
-    a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
+    a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)?
+    *Static position places the element on its default position, ignoring other properties. Relative position places the element relative to its original position. Absolute position places the element relative to its nearest positioned ancestor. Fixed position places the element relative to the screen and stays in the same spot even when scrolling.*
 
-    b. How does absolute positioning depend on its parent element?
+    b. How does absolute positioning depend on its parent element?  
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
 
