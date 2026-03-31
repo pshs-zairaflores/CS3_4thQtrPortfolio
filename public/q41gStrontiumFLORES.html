@@ -36,7 +36,10 @@
       <ul id="movieList"></ul>
     </div>
     <script>
+
       let selectedRating = 0;
+      let movieList = JSON.parse(localStorage.getItem("movies")) || [];
+      displayMovies(movieList);
 
       function addMovie() {
         let title = document.getElementById("movieTitle").value.trim();
@@ -50,7 +53,7 @@
           rating: selectedRating
         }
 
-        let movieList = JSON.parse(localStorage.getItem("movies")) || [];
+        movieList = JSON.parse(localStorage.getItem("movies")) || [];
         movieList.push(addedMovie);
         localStorage.setItem("movies", JSON.stringify(movieList));
         displayMovies(movieList);
@@ -59,7 +62,11 @@
       function displayMovies(list) {
         let output = "";
         for (let i = 0; i < list.length; i++) {
-          output += "<li>" + list[i].title + "</li>";
+          output += `<li>Movie #${i+1} : 
+               <span>Title:</span> ${list[i].title} 
+               <span>Year:</span> ${list[i].year} 
+               <span>Genre:</span> ${list[i].genre} 
+               <span>Rating:</span> ${"★".repeat(Number(list[i].rating))}</li>`;
         }
         document.getElementById("movieList").innerHTML = output;
       }
@@ -79,6 +86,7 @@
           }
         });
       }
+
     </script>
   </body>
 </html>
