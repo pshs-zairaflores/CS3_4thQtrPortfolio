@@ -100,8 +100,11 @@
     a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)?
     *Static position places the element on its default position, ignoring other properties. Relative position places the element relative to its original position. Absolute position places the element relative to its nearest positioned ancestor. Fixed position places the element relative to the screen and stays in the same spot even when scrolling.*
 
-    b. How does absolute positioning depend on its parent element?  
+    b. How does absolute positioning depend on its parent element?
+    *Absolute positioning uses the parent element as an anchor instead of the whole browser viewport.*
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
+    *When an element is in fixed positioning, it stays in its same position on the viewport at all times even when scrolling. When an element is in sticky positioning, it behaves like relative positioning or scrolls normally until it reaches a specific scroll position, and that's when it will behave like fixed positioning, but only within its parent container.*
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+    *Applying positioning for a webpage would be very helpful in making the page look organize, neat, and easy to follow. For example, sticky positioning can be applied on the header of a long webpage that would serve as a navigation menu. Another example is using absolute positioning in overlaying text or icons as labels on an image or video without affect the rest of the layout.*
