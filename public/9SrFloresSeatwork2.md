@@ -16,58 +16,27 @@
     **- This seatwork is worth 20pts and should be submitted by the end of the period** The link to [KHub submission bin](https://khub.mc.pshs.edu.ph/mod/assign/view.php?id=15481).
       - Submit the links to your .md file and .html file.
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="author" content="<your names>" />
-  <meta name="revised" content="<date today>" />
-  <style>
-    body { font-family: Arial, sans-serif; }
-    .header, .footer {
-      background: lightblue;
-      padding: 10px;
-    }
-    .footer {
-       opacity: 0.5;
-    }
-    .sidebar {
-      background: lightgreen;
-      width: 150px;
-      height: 200px;
-    }
-    .content {
-      background: lightyellow;
-      width: 300px;
-      height: 200px;
-    }    
-  </style>
-</head>
-<body>
-  <div class="header">Header</div>
-  <div class="sidebar">Sidebar</div>
-  <div class="content">Main Content</div>
-  <div class="footer">Footer</div>
-</body>
-</html>
-```
+
 ### Step 1 (Static vs Relative):
 
 - Add in css ```position: relative; top: 20px; left: 20px;``` to .sidebar.
 
 - Guided Question: What changed compared to the default static positioning? Try to give different values to top and left or you can change it to bottom, right.
+*Compared to the default static positioning, the position of the sidebar changed slightly depending on the values and the direction of the css given. Static positioning follows the natural flow of the page*
 
 ### Step 2 (Fixed):
 
 - Add in css ```position: fixed; bottom: 0; width: 100%;``` to .footer.
 
 - Guided Question: What happens when you scroll the page? Why does the footer behave differently from position relative?
+*When you scroll the page, the footer just stays in the same position at the bottom of the page and would still be visible in the viewport despite scrolling up or down. The footer behaves differently from position relative because its position is fixed.*
 
 ### Step 3 (Absolute):
 
 - Add in css ```position: absolute; top: 66px; left: 200px;``` to .content.
 
 - Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?
+*The effect of position: absolute on an element is that it changes the position of the element to a position that is relative to its nearest positioned ancestor. It is different from fixed because a fixed positioned element would stay visible on the screen even after scrolling, while an absolute positioned element would move with the page content as you scroll and disappear from viewport.*
 
 ### Step 4 : (Absolute)
 
@@ -87,11 +56,44 @@
 - Give .content a z-index: 1.
 
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
+*The notice appears on top of the content because it is a higher z-index than the content. An element with higher z-index will cover an element with a lower z-index. If we swap their z-index values, the content will cover the notice.*
 
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
+    ```css
+    .content {
+      background: lightyellow;
+      width: 300px;
+      height: 200px;
+      position: absolute; top: 66px; left: 200px;
+      z-index: 1;
+    
+    }
+    .notice {
+    position: absolute; top: 66px; left: 430px;
+    background: orange;
+    padding: 10px;
+    z-index: 2;
+
+    }
+    ```
+    ```html
+    </html>
+      </head>
+        <body>
+          <div class="header">Header</div>
+          <div class="sidebar">Sidebar</div>
+          <div class="content">Main Content</div>
+          <div class="footer">Footer</div>
+          <div class="notice">Notice!</div>
+        </body>
+    </html>
+    ```
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
+    When the position of .contect is changed to relative while keeping the top and left values, .content is placed to its original position but is moved 66px down and 200px to the right. On the other, when changed to fixed, it is placed at the same position as it was when the position was set to absolute
+
     * What do you observe on about the effect of z-index on .notice and .content boxes?
+    *The z-index layers the elements to each other. Element with a higher z-index will be placed on top of the one with a lower z-index.*
 
 3. Please answer the following reflection questions (15 minutes)
 
