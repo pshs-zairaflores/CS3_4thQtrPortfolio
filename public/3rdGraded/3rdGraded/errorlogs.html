@@ -56,51 +56,51 @@
       </tr>
       <tr>
         <td> 1 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#7-9 CSS</td> 
+        <td>Improper declaration of font family. Font family was declared three times, making the font choices unnecessary because they will only be overwritten.</td>
+        <td>Combine into one declaration, so font-family: 'Open Sans', 'Poppins', 'Roboto', sans-serif. </td>
       </tr>
       <tr>
         <td> 2 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#31 CSS</td> 
+        <td>Orientation of the navigation bar will not be in a horizontal manner because it is set as display:block.</td>
+        <td>Change display:block to display:inline-block to also add padding.</td>
       </tr>
       <tr>
         <td> 3 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#25-28 CSS</td> 
+        <td>The navigation bar will scroll with the content, which is not supposed to be case, following the requirements.</td>
+        <td>Add position:fixed; to follow the requirement and add top:0; left 0; to fill the empty space</td>
       </tr>
       <tr>
         <td> 4 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#37 CSS </td> 
+        <td>The hover effect on navigation bar won't work because the extra space on nav a :hover will only apply the effect on a child of nav a, and not the link.</td>
+        <td>Remove the space between a and : so nav a:hover</td>
       </tr>
       <tr>
         <td> 5 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#1 JS</td> 
+        <td>The function plotPoint() is void because it declares no parameters when the console log prints (x0,y0,x,y)</td>
+        <td>Add (x0,y0,x,y) so function plotPoint(x0,y0,x,y)</td>
       </tr>
       <tr>
         <td> 6 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#27 JS</td> 
+        <td>Closing bracket for the function is missing, preventing the script from running.</td>
+        <td>Add closing bracket.</td>
       </tr>
       <tr>
         <td> 7 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#8-9 JS</td> 
+        <td>The styleleft and stylebottom stated are basically useless properties because they don't exist in the css.</td>
+        <td>Add . after style, so point.style.left and point.style.bottom.</td>
       </tr>
       <tr>
         <td> 8 </td> 
-        <td> </td> 
-        <td> </td>
-        <td> </td>
+        <td>#49-52 CSS</td> 
+        <td>The position of the point would be wrong and would never change because the property .point would just ignore the left and bottom relative to the parent #coordinatePlane.</td>
+        <td>Add position:absolute;</td>
       </tr>
       <tr>
         <td> 9 </td> 
