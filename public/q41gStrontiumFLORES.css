@@ -1,11 +1,13 @@
+body::before {
+    filter: brightness(0) blur(8px);
+}
 body {
     font-family: Georgia, serif;
-    background: #f4f6f9;
+    background-image: url('2d20f1d2-b8ff-4279-8d10-bd85e2c99410_825x510.jpg');
     margin: 0;
     padding: 20px;
 }
-
-h2 {
+h1 {
     text-align: center;
     font-size: 20px;
     letter-spacing: 2px;
